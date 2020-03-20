@@ -10,8 +10,8 @@ using System.Threading.Tasks;
 
 namespace CristianKulessa.ThomasGregSons.WebApp.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
     public class ClientesController : ControllerBase
     {
         private readonly IClienteService service;
@@ -66,7 +66,6 @@ namespace CristianKulessa.ThomasGregSons.WebApp.Controllers
             catch (Exception e)
             {
                 return BadRequest(e);
-                throw;
             }
         }
         [HttpPost]
@@ -78,15 +77,15 @@ namespace CristianKulessa.ThomasGregSons.WebApp.Controllers
             }
             try
             {
-                service.Insert(
-                    new Cliente
-                    {
-                        Id = model.Id,
-                        Nome = model.Nome,
-                        Email = model.Email,
-                        Logotipo = model.Logotipo
-                    });
-                return Ok();
+                var entity = new Cliente
+                {
+                    Nome = model.Nome,
+                    Email = model.Email,
+                    Logotipo = model.Logotipo
+                };
+                service.Insert(entity);
+                var uri = Url.Action("Get", new { id = entity.Id });
+                return Created(uri, entity);
             }
             catch (Exception e)
             {
@@ -106,13 +105,14 @@ namespace CristianKulessa.ThomasGregSons.WebApp.Controllers
                 {
                     return NotFound();
                 }
-                service.Update(new Cliente()
+                var entity = new Cliente()
                 {
                     Id = model.Id,
                     Nome = model.Nome,
                     Email = model.Email,
                     Logotipo = model.Logotipo
-                });
+                };
+                service.Update(entity);
                 return Ok();
             }
             catch (DbUpdateConcurrencyException)
@@ -141,7 +141,7 @@ namespace CristianKulessa.ThomasGregSons.WebApp.Controllers
                     return NotFound();
                 }
                 service.Delete(id);
-                return Ok();
+                return NoContent();
             }
             catch (Exception e)
             {
