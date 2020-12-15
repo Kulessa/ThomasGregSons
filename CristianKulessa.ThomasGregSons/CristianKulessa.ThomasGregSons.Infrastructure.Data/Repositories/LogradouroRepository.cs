@@ -1,10 +1,7 @@
 ﻿using CristianKulessa.ThomasGregSons.Domain.Entities;
 using CristianKulessa.ThomasGregSons.Domain.Repositories.Interfaces;
 using CristianKulessa.ThomasGregSons.Infrastructure.Data.Context;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace CristianKulessa.ThomasGregSons.Infrastructure.Data.Repositories
 {

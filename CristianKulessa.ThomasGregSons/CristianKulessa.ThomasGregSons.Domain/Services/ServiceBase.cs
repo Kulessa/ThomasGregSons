@@ -1,9 +1,7 @@
 ﻿using CristianKulessa.ThomasGregSons.Domain.Repositories.Interfaces;
 using CristianKulessa.ThomasGregSons.Domain.Services.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace CristianKulessa.ThomasGregSons.Domain.Services
 {

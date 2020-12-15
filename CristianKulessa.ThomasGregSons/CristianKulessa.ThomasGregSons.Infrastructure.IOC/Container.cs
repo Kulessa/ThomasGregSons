@@ -3,9 +3,6 @@ using CristianKulessa.ThomasGregSons.Domain.Services;
 using CristianKulessa.ThomasGregSons.Domain.Services.Interfaces;
 using CristianKulessa.ThomasGregSons.Infrastructure.Data.Repositories;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CristianKulessa.ThomasGregSons.Infrastructure.IOC
 {

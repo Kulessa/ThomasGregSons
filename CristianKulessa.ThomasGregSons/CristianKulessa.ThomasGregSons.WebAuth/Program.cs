@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace CristianKulessa.ThomasGregSons.WebApp
+namespace CristianKulessa.ThomasGregSons.WebAuth
 {
     public class Program
     {

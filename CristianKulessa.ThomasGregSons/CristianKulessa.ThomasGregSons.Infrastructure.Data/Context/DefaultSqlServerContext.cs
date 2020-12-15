@@ -1,8 +1,5 @@
 ﻿using CristianKulessa.ThomasGregSons.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CristianKulessa.ThomasGregSons.Infrastructure.Data.Context
 {
@@ -21,10 +18,11 @@ namespace CristianKulessa.ThomasGregSons.Infrastructure.Data.Context
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Cliente>(entity => {
+            modelBuilder.Entity<Cliente>(entity =>
+            {
                 entity.HasKey(e => e.Id)
                     .HasName("PK_Cliente");
-                
+
                 entity.HasIndex(e => e.Email)
                     .HasName("UX_Cliente_Email")
                     .IsUnique();
@@ -59,10 +57,11 @@ namespace CristianKulessa.ThomasGregSons.Infrastructure.Data.Context
 
             });
 
-            modelBuilder.Entity<Logradouro>(entity => {
+            modelBuilder.Entity<Logradouro>(entity =>
+            {
                 entity.HasKey(e => e.Id)
                     .HasName("PK_Logradouro");
-                
+
                 entity.HasIndex(e => e.Nome)
                     .HasName("IX_Logradouro_Nome");
 

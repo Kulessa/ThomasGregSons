@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CristianKulessa.ThomasGregSons.Domain.Entities
+﻿namespace CristianKulessa.ThomasGregSons.Domain.Entities
 {
     public class Logradouro
     {

@@ -1,15 +1,16 @@
 ﻿using CristianKulessa.ThomasGregSons.Domain.Entities;
 using CristianKulessa.ThomasGregSons.Domain.Services.Interfaces;
 using CristianKulessa.ThomasGregSons.WebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace CristianKulessa.ThomasGregSons.WebApp.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class ClientesController : ControllerBase
